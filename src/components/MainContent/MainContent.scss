@@ -1,0 +1,7 @@
+@import '../../util//variables';
+
+.MainContent {
+	background-color: $gray;
+	height: 100vh;
+	overflow: scroll;
+}

@@ -1,0 +1,31 @@
+@import '../../util/variables';
+
+.FutureContent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 90%;
+	height: 75px;
+	background-color: $melee;
+	color: $white;
+
+	border: 3px ridge $health;
+	border-radius: 5px;
+
+	margin: 2em auto;
+
+	text-align: center;
+
+	h3 {
+		font-size: 1em;
+		font-weight: 600;
+		font-style: italic;
+	}
+
+	p {
+		font-size: 16px;
+		font-weight: 400;
+		font-style: italic;
+	}
+}

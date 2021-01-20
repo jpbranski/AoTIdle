@@ -15,19 +15,19 @@ const playerSkills = {
 		experience: 0,
 	},
 	farming: {
-		experience: 0,
+		experience: 58730903,
 	},
 	fishing: {
-		experience: 0,
+		experience: 158301,
 	},
 	hunting: {
-		experience: 25000000,
+		experience: 6000350,
 	},
 	mining: {
-		experience: 0,
+		experience: 185930,
 	},
 	woodcutting: {
-		experience: 0,
+		experience: 403,
 	},
 	cooking: {
 		experience: 0,
