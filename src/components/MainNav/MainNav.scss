@@ -1,0 +1,195 @@
+@import "../../util/variables";
+
+.MainNav {
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: $black;
+	transition: 1s ease;
+	padding-top: 100px;
+	padding-left: .375rem;
+
+	color: $white;
+	text-align: left;
+
+	&.hidden {
+		left: -100%;
+	}
+
+	.NavHeader {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		margin: 0 auto;
+
+		height: 100px;
+		width: 60%;
+
+		h1 a {
+			color: $gold;
+			font-size: 1.5em;
+			letter-spacing: 1.2px;
+			text-decoration: none;
+		}
+
+		h2 {
+			width: 100%;
+			margin-top: 6px;
+			padding: 0 0 4px;
+
+			font-size: 20px;
+			font-weight: 400;
+			text-align: center;
+
+			border-top: 2px ridge $gold;
+			border-bottom: 2px ridge $gold;
+		}
+	}
+
+	.NavList {
+		width: 95%;
+		margin: 0 auto;
+
+		.playerName {
+			margin: .375em 0;
+
+			font-size: 22px;
+			color: $gold;
+		}
+
+		ul {
+			list-style: none;
+
+			li {
+				width: 100%;
+
+				&.navHealth, &.navTotal, &.navGold {
+					width: 100px;
+					border-bottom: 3px ridge;
+					margin-bottom: 10px;
+
+					font-size: 20px;
+					font-style: italic;
+				}
+
+				&.navHealth {
+					border-color: $health;
+				}
+				&.navTotal {
+					border-color: $bronze;
+				}
+				&.navGold {
+					border-color: $gold;
+					
+					margin-bottom: 2em;
+				}
+
+				a:link, a:visited {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					height: 50px;
+
+					margin: 1em 0;
+
+					color: $bronze;
+					font-size: 22px;
+					letter-spacing: 2px;
+					text-align: center;
+					text-decoration: none;
+					text-transform: uppercase;
+
+					border: 3px ridge $bronze;
+					border-radius: 5px;
+
+					transition: all 1s ease;
+
+					&:hover, &:focus, &:active, &.activeNav {
+						color: $white;
+						text-shadow: 1px 1px 2px $black;
+
+						background-color: $bronze;
+						box-shadow: 0 0 7px rgba($gold, 0.9);
+					}
+				}
+			}
+		}
+	}
+
+	.openNav {
+		position: absolute;
+		right: -67px;
+		top: 0;
+		bottom: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		padding-bottom: 5px;
+
+		width: 100px;
+		height: 35px;
+
+		color: $white;
+		font-family: 'Crimson Text', serif;
+		font-size: 1.25em;
+
+		background-color: $black;
+
+		border-color: $gold;
+		border-width: 2px;
+		border-style: ridge;
+		border-top: none;
+		border-bottom-left-radius: 50%;
+		border-bottom-right-radius: 50%;
+		outline: none;
+
+		transform: rotate(-90deg);
+		cursor: pointer;
+	}
+
+	.closeNav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: calc( 1em / 1.5 );
+		right: calc( 1em / 1.5 );
+
+		width: 35px;
+		height: 35px;
+
+		color: $bronze;
+		font-weight: 700;
+		font-size: 1.375em;
+
+		background-color: $black;
+		border-radius: 10px;
+		border-color: $bronze;
+		outline: none;
+
+		transition: all 1.5s ease;
+
+		cursor: pointer;
+
+		&:hover, &:active, &:focus {
+			color: $gold;
+			border-color: $gold;
+			box-shadow: 0 0 10px rgba($gold, 0.9);
+		}
+	}
+
+	@media( min-width: 720px) {
+		.openNav, .closeNav {
+			display: none;
+		}
+	}
+}
