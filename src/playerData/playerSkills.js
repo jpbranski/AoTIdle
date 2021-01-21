@@ -15,7 +15,7 @@ const playerSkills = {
 		experience: 0,
 	},
 	farming: {
-		experience: 58730903,
+		experience: 113921533,
 	},
 	fishing: {
 		experience: 158301,

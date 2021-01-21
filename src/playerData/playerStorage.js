@@ -1,6 +1,6 @@
 const playerStorage = {
 	// uncooked fish
-	'raw crawfish': 0,
+	'raw crawfish': 1,
 	'raw bluegill': 0,
 	'raw crappie': 0,
 	'raw lava shrimp': 0,
@@ -38,5 +38,35 @@ const playerStorage = {
 	'enchanted stone': 0,
 	'gold': 0,
 	'adamant': 0,
-	
+	'blessed crystal': 0,
+	'starcore': 0,
+	'dragonscale': 0,
+	'magmaheart': 0,
+	'aegis stone': 0,
+	'maelstromite': 0,
+
+	// metals
+	'bronze': 0,
+	'iron': 0,
+	'silver': 0,
+	'steel': 0,
+	'enchanted stone': 0,
+	'gold': 0,
+	'adamant': 0,
+	'blessed crystal': 0,
+	'dragonscale': 0,
+	'magmaheart': 0,
+	'aegis stone': 0,
+	'maelstromite': 0,
+
+	// wood
+	'fir': 0,
+	'pine': 0,
+	'oak': 0,
+	'maple': 0,
+	'cherry': 0,
+	'ironwood': 0,
+	'glimmering': 0,
 }
+
+export default playerStorage;
