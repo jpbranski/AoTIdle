@@ -16,7 +16,7 @@ import Woodcutting from '../Gathering/Woodcutting';
 
 import './MainContent.min.css';
 
-export default function MainContent() {
+export default function MainContent(props) {
 	return (
 		<main className="MainContent">
 			<ContentHeader />

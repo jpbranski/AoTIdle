@@ -5,7 +5,7 @@ const fishingData = [
 		minLevel: 1,
 		experience: 1,
 		attemptRate: 2300,
-		successRate: 50,
+		successRate: 80,
 		depleteChance: 30,
 	},
 	{
@@ -22,7 +22,7 @@ const fishingData = [
 		skill: 'fishing',
 		minLevel: 10,
 		experience: 1,
-		attemptRate: 2300,
+		attemptRate: 500,
 		successRate: 50,
 		depleteChance: 30,
 	},
@@ -31,7 +31,7 @@ const fishingData = [
 		skill: 'fishing',
 		minLevel: 15,
 		experience: 1,
-		attemptRate: 2300,
+		attemptRate: 5000,
 		successRate: 50,
 		depleteChance: 30,
 	},
@@ -117,3 +117,5 @@ const fishingData = [
 		depleteChance: 30,
 	},
 ]
+
+export default fishingData;

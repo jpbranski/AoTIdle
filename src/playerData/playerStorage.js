@@ -1,6 +1,6 @@
 const playerStorage = {
 	// uncooked fish
-	'raw crawfish': 0,
+	'raw crawfish': 1,
 	'raw bluegill': 0,
 	'raw crappie': 0,
 	'raw lava shrimp': 0,
@@ -68,3 +68,5 @@ const playerStorage = {
 	'ironwood': 0,
 	'glimmering': 0,
 }
+
+export default playerStorage;
