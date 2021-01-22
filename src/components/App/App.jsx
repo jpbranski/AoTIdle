@@ -24,10 +24,11 @@ export default class App extends React.Component {
 	componentDidMount = () => {
 
 		this.runActiveTasks()
+		this.startSaves();
 	}
 
 	componentDidUpdate = () => {
-		this.startSaves();
+		
 	}
 
 	startSaves = () => {
@@ -35,21 +36,33 @@ export default class App extends React.Component {
 			this.setState({
 				lastSave: new Date().toJSON(),
 			})
-		}, 300000);
+		}, 1000);
 	}
 
 	runActiveTasks = () => {
 		let taskInterval;
 		let chance;
+		
 
 		function loop() {
+			let currentTask = playerInfo.activeTask;
+				if(playerInfo.activeCategory === "fishing"){
+					currentTask = "raw " + playerInfo.activeTask;
+				}
 			taskInterval = playerInfo.attemptRate === 0 ? 5000 : playerInfo.attemptRate;
 			chance = playerInfo.successRate / 100;
+			let deplete = playerInfo.depleteChance / 100;
 			
 			if(Math.random() < chance) {
-				console.log("success!");
+				playerSkills[playerInfo.activeCategory].experience += playerInfo.expRate;
+				playerStorage[currentTask]++;
+				
 			} else {
-				console.log("failure...");
+				if(Math.random() < deplete) {
+					let respawn = playerInfo.attemptRate * 2;
+					
+					setTimeout(console.log("Resource has respawned"), respawn)
+				}
 			}
 			
 
@@ -58,6 +71,8 @@ export default class App extends React.Component {
 		  }
 		  loop();
 	}
+
+	
 
 	render () {
 		return (
