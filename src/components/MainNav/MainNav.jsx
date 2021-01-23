@@ -28,7 +28,7 @@ export default class MainNav extends React.Component {
 				<button className="openNav" onClick={this.toggleNav} aria-label="open mobile menu" >Menu</button>
 				<button className="closeNav" onClick={this.toggleNav} aria-label="close mobile menu" >&#10005;</button>
 				<NavHeader />
-				<NavList />
+				<NavList toggleNav={this.toggleNav}/>
 			</nav>
 		)
 	}

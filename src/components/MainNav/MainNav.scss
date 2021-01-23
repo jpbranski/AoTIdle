@@ -61,11 +61,13 @@
 		width: 95%;
 		margin: 0 auto;
 
-		.playerName {
+		.playerName a {
 			margin: .375em 0;
 
 			font-size: 22px;
 			color: $gold;
+
+			text-decoration: none;
 		}
 
 		ul {

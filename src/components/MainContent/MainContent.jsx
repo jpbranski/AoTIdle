@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import Player from '../Player/Player';
+
 import ContentHeader from '../ContentHeader/ContentHeader';
 import CombatMain from '../Combat/CombatMain';
 import Battles from '../Combat/Battles';
@@ -21,6 +23,8 @@ export default function MainContent(props) {
 		<main className="MainContent">
 			<ContentHeader />
 			<Switch>
+				<Route exact path="/player" component={Player} />
+
 				<Route exact path="/combat" render={(props) => <CombatMain />} />
 				<Route exact path="/combat/battles" component={Battles} />
 				<Route exact path="/combat/slayer" component={Slayer} />
