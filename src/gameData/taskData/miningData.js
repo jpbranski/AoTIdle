@@ -5,7 +5,7 @@ const miningData = [
 		minLevel: 1,
 		experience: 12,
 		attemptRate: 1500,
-		successRate: 65,
+		successRate: 100,
 		depleteChance: 20,
 	},
 	{
@@ -54,7 +54,7 @@ const miningData = [
 		depleteChance: 20,
 	},
 	{
-		name: 'copper',
+		name: 'gold',
 		skill: 'mining',
 		minLevel: 1,
 		experience: 12,
@@ -63,7 +63,7 @@ const miningData = [
 		depleteChance: 20,
 	},
 	{
-		name: 'copper',
+		name: 'adamant',
 		skill: 'mining',
 		minLevel: 1,
 		experience: 12,
@@ -72,7 +72,7 @@ const miningData = [
 		depleteChance: 20,
 	},
 	{
-		name: 'copper',
+		name: 'blessed crystal',
 		skill: 'mining',
 		minLevel: 1,
 		experience: 12,
@@ -81,7 +81,7 @@ const miningData = [
 		depleteChance: 20,
 	},
 	{
-		name: 'copper',
+		name: 'starcore',
 		skill: 'mining',
 		minLevel: 1,
 		experience: 12,
@@ -90,7 +90,7 @@ const miningData = [
 		depleteChance: 20,
 	},
 	{
-		name: 'copper',
+		name: 'dragonscale',
 		skill: 'mining',
 		minLevel: 1,
 		experience: 12,
@@ -99,7 +99,7 @@ const miningData = [
 		depleteChance: 20,
 	},
 	{
-		name: 'copper',
+		name: 'magmaheart',
 		skill: 'mining',
 		minLevel: 1,
 		experience: 12,
@@ -108,7 +108,7 @@ const miningData = [
 		depleteChance: 20,
 	},
 	{
-		name: 'copper',
+		name: 'aegis stone',
 		skill: 'mining',
 		minLevel: 1,
 		experience: 12,
@@ -117,7 +117,7 @@ const miningData = [
 		depleteChance: 20,
 	},
 	{
-		name: 'copper',
+		name: 'maelstromite',
 		skill: 'mining',
 		minLevel: 1,
 		experience: 12,

@@ -3,11 +3,6 @@
 .Gathering {
 	min-height: 100vh;
 
-	background-color: $darkblue;
-	background-attachment: fixed;
-	background-size: auto 100%;
-	background-position: center;
-
 	.skillMenu {
 		display: flex;
 		flex-direction: column;
@@ -155,6 +150,18 @@
 
 			&.fishing {
 				border-color: $fishing;
+			}
+
+			&.mining {
+				border-color: $mining;
+			}
+
+			&.woodcutting {
+				border-color: $woodcutting;
+			}
+
+			&.hunting {
+				border-color: $hunting;
 			}
 		}
 	}

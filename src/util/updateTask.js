@@ -1,6 +1,8 @@
 import playerInfo from '../playerData/playerInfo';
 import fishingData from '../gameData/taskData/fishingData';
-import playerSkills from '../playerData/playerSkills';
+import miningData from '../gameData/taskData/miningData';
+import woodcuttingData from '../gameData/taskData/woodcuttingData';
+import huntingData from '../gameData/taskData/huntingData';
 import calcSkillLevel from '../util/calcSkillLevel';
 
 const updateTask = function(task, category) {
@@ -11,6 +13,20 @@ const updateTask = function(task, category) {
 			newTask = fishingData.find( ({ name }) => name === task);
 			skillLevel = calcSkillLevel(category);
 			break;
+		case 'mining':
+			newTask = miningData.find( ({ name }) => name === task);
+			skillLevel = calcSkillLevel(category);
+			break;
+		case 'woodcutting':
+			newTask = woodcuttingData.find( ({ name }) => name === task);
+			skillLevel = calcSkillLevel(category);
+			break;
+		case 'hunting':
+			newTask = huntingData.find( ({ name }) => name === task);
+			skillLevel = calcSkillLevel(category);
+			break;
+		default:
+			console.log("please select a task!");
 	}
 
 	if( skillLevel < newTask.minLevel ) {

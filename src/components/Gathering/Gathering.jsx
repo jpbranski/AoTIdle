@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import skillCategories from '../../gameData/skillCategories.js';
@@ -7,10 +7,6 @@ import calcSkillLevel from '../../util/calcSkillLevel';
 import './Gathering.min.css';
 
 export default function Gathering () {
-
-	useEffect(() => {
-		document.title = "Gathering";
-	})
 
 	return (
 		

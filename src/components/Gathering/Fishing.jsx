@@ -9,7 +9,6 @@ import updateTask from '../../util/updateTask';
 export default function Fishing (props) {
 	return (
 		<section className="Fishing Gathering">
-			FISH
 			<section className="taskList">
 				{
 				FishingData.map( fish => {

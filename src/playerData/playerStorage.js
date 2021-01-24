@@ -35,14 +35,14 @@ const playerStorage = {
 	'iron ore': 0,
 	'silver ore': 0,
 	'coal ore': 0,
-	'enchanted stone': 0,
+	'enchanted stone ore': 0,
 	'gold ore': 0,
 	'adamant ore': 0,
-	'blessed crystal': 0,
-	'starcore': 0,
-	'dragonscale': 0,
+	'blessed crystal ore': 0,
+	'starcore ore': 0,
+	'dragonscale ore': 0,
 	'magmaheart ore': 0,
-	'aegis stone': 0,
+	'aegis stone ore': 0,
 	'maelstromite ore': 0,
 
 	// metals
@@ -67,6 +67,26 @@ const playerStorage = {
 	'cherry log': 0,
 	'ironwood log': 0,
 	'glimmering log': 0,
+
+	// hunting resources
+	'rabbit pelt': 0,
+	'feather': 0,
+	'coyote pelt': 0,
+	'snowshoe pelt': 0,
+	'large feather': 0,
+	'imp horn': 0,
+	'fox fur': 0,
+	'cursed feather': 0,
+	'tough pelt': 0,
+	'silver fur': 0,
+	'flaming feather': 0,
+	'great wolf fur': 0,
+	'gryphon talon': 0,
+	'shadow imp horn': 0,
+	'ashen pelt': 0,
+	'dragonhide': 0,
+	'galactic pelt': 0,
+	'solar talon': 0,
 }
 
 export default playerStorage;

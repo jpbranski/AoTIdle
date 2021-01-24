@@ -10,44 +10,48 @@ import playerInfo from '../../playerData/playerInfo';
 import playerSkills from '../../playerData/playerSkills';
 
 import updateTask from '../../util/updateTask';
+import calcTotalLevel from '../../util/calcTotalLevel';
+import huntingResources from '../../util/huntingResources';
+// import calcSkillLevel from '../../util/calcSkillLevel';
 
 
 export default class App extends React.Component {
 	
 	state = {
 		lastSave : "",
-
 		activeTask: "",
 		activeCategory: "",
 	}
 
 	componentDidMount = () => {
-
-		this.runActiveTasks()
+		calcTotalLevel();
+		updateTask();
+		this.runActiveTasks();
 		this.startSaves();
-	}
-
-	componentDidUpdate = () => {
-		
 	}
 
 	startSaves = () => {
 		setInterval(() => {
 			this.setState({
 				lastSave: new Date().toJSON(),
-			})
+			});
 		}, 1000);
 	}
 
 	runActiveTasks = () => {
 		let taskInterval;
 		let chance;
-		
 
 		function loop() {
 			let currentTask = playerInfo.activeTask;
 				if(playerInfo.activeCategory === "fishing"){
 					currentTask = "raw " + playerInfo.activeTask;
+				} else if(playerInfo.activeCategory === "mining") {
+					currentTask = playerInfo.activeTask + " ore";
+				} else if(playerInfo.activeCategory === "woodcutting") {
+					currentTask = playerInfo.activeTask + " log";
+				} else if(playerInfo.activeCategory === "hunting"){
+					currentTask = huntingResources(playerInfo.activeTask);
 				}
 			taskInterval = playerInfo.attemptRate === 0 ? 5000 : playerInfo.attemptRate;
 			chance = playerInfo.successRate / 100;
@@ -64,15 +68,11 @@ export default class App extends React.Component {
 					setTimeout(console.log("Resource has respawned"), respawn)
 				}
 			}
-			
-
 
 			setTimeout(loop, taskInterval);
 		  }
 		  loop();
 	}
-
-	
 
 	render () {
 		return (

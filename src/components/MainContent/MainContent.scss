@@ -1,7 +1,8 @@
 @import '../../util//variables';
 
 .MainContent {
-	background-color: $gray;
+	background-color: $darkblue;
 	height: 100vh;
 	overflow: scroll;
+	padding-top: 75px;
 }

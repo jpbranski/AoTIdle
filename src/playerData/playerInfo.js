@@ -1,6 +1,6 @@
 const playerInfo = {
 	name: 'With Faith',
-	health: 100,
+	currentHealth: 100,
 	totalLevel: 0,
 	gold: 95203,
 
