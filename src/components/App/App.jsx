@@ -18,6 +18,7 @@ import huntingResources from '../../util/huntingResources';
 export default class App extends React.Component {
 	
 	state = {
+		logStatus : true,
 		lastSave : "",
 		activeTask: "",
 		activeCategory: "",
@@ -86,7 +87,7 @@ export default class App extends React.Component {
 		return (
 			<div className="App">
 				<MainNav />
-				<MainContent updateTask={this.updateTask} />
+				<MainContent updateTask={this.updateTask} logStatus={this.state.logStatus} />
 				
 			</div>
 		)	

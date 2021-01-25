@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import MainScreen from './MainScreen';
+
 import Player from '../Player/Player';
 
 import ContentHeader from '../ContentHeader/ContentHeader';
@@ -23,11 +25,16 @@ import KingdomStorage from '../Kingdom/KingdomStorage';
 
 import './MainContent.min.css';
 
-export default function MainContent() {
+export default function MainContent(props) {
+	let logStatus = props.logStatus;
 	return (
 		<main className="MainContent">
 			<ContentHeader />
 			<Switch>
+				<Route exact path="/" render={
+					(props) => <MainScreen logStatus={logStatus}/>
+				} />
+
 				<Route exact path="/player" component={Player} />
 
 				<Route exact path="/combat" render={(props) => <CombatMain />} />

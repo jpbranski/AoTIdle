@@ -6,3 +6,26 @@
 	overflow: scroll;
 	padding-top: 75px;
 }
+
+.MainScreen {
+	color: $white;
+
+	h3 {
+		font-size: 18px;
+		text-align: center;
+	}
+
+	p{
+		margin: 1em;
+		line-height: 1.1;
+		font-size: 18px;
+	}
+
+	.disclaimer {
+		font-style: italic;
+		
+		a {
+			color: $gold;
+		}
+	}
+}
