@@ -22,17 +22,6 @@ const huntingData = [
 		resourceMax: 1,
 	},
 	{
-		name: 'coyote',
-		skill: 'hunting',
-		minLevel: 1,
-		experience: 12,
-		attemptRate: 1500,
-		successRate: 100,
-		depleteChance: 20,
-		resourceMin: 1,
-		resourceMax: 1,
-	},
-	{
 		name: 'snowshoe hare',
 		skill: 'hunting',
 		minLevel: 1,

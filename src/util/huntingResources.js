@@ -1,7 +1,6 @@
 let huntingAnimal = [
 	"common rabbit",
 	"pheasant",
-	"coyote",
 	"snowshoe hare",
 	"turkey",
 	"imp",
@@ -22,7 +21,6 @@ let huntingAnimal = [
 let huntingResource = [
 	"rabbit pelt",
 	"feather",
-	"coyote pelt",
 	"snowshoe pelt",
 	"large feather",
 	"imp horn",

@@ -6,7 +6,7 @@ import FutureContent from '../FutureContent/FutureContent';
 export default function Farming () {
 	return (
 		<section className="Farming Gathering">
-			<FutureContent />
+			<FutureContent version={"Alpha v2.0.0"} />
 		</section>
 	)
 }

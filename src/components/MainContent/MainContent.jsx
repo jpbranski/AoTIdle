@@ -16,6 +16,11 @@ import Hunting from '../Gathering/Hunting';
 import Mining from '../Gathering/Mining';
 import Woodcutting from '../Gathering/Woodcutting';
 
+import Artisan from '../Artisan/Artisan';
+
+import Kingdom from '../Kingdom/Kingdom';
+import KingdomStorage from '../Kingdom/KingdomStorage';
+
 import './MainContent.min.css';
 
 export default function MainContent() {
@@ -36,6 +41,11 @@ export default function MainContent() {
 				<Route exact path="/gathering/hunting" component={Hunting}/>
 				<Route exact path="/gathering/mining" component={Mining}/>
 				<Route exact path="/gathering/woodcutting" component={Woodcutting}/>
+
+				<Route exact path="/artisan" component={Artisan}/>
+
+				<Route exact path="/kingdom" component={Kingdom}/>
+				<Route exact path="/kingdom/storage" component={KingdomStorage}/>
 			</Switch>
 		</main>
 	)

@@ -71,7 +71,6 @@ const playerStorage = {
 	// hunting resources
 	'rabbit pelt': 0,
 	'feather': 0,
-	'coyote pelt': 0,
 	'snowshoe pelt': 0,
 	'large feather': 0,
 	'imp horn': 0,

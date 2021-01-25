@@ -41,7 +41,7 @@ const playerSkills = {
 	herbalism: {
 		experience: 0,
 	},
-	leatherworking: {
+	tanning: {
 		experience: 0,
 	},
 }

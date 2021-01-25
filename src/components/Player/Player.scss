@@ -2,4 +2,110 @@
 
 .Player {
 	color: $white;
+
+	h3 {
+		width: 70%;
+		margin: 0 auto;
+
+		color: $gold;
+		font-size: 22px;
+		text-align: center;
+		border-bottom: 3px ridge $gold;
+	}
+
+	.currentStats {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+
+		margin: 1em 0 2em;
+
+		text-align: center;
+	}
+
+	.skillLevel {
+		margin: 0 auto .5em;
+		width: 40%;
+
+		color: $gold;
+		font-size: 22px;
+		text-align: center;
+
+		border-bottom: 3px ridge $gold;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: center;
+
+		width: 100%;
+
+		list-style: none;
+
+		li {
+			width: 31%;
+			display: inline-block;
+			padding: .5em 0;
+			margin: .3em 0;
+
+			text-align: center;
+			text-transform: capitalize;
+			letter-spacing: 1px;
+			word-wrap: break-word;
+
+			background-color: $gray;
+			border-top: 3px ridge;
+			border-radius: 5px;
+
+			&.health {
+				border-color: $health;
+			}
+			&.melee {
+				border-color: $melee;
+			}
+			&.ranged {
+				border-color: $ranged;
+			}
+			&.defense {
+				border-color: $defense;
+			}
+			&.slayer {
+				border-color: $slayer;
+			}
+			&.farming {
+				border-color: $farming;
+			}
+			&.fishing {
+				border-color: $fishing;
+			}
+			&.hunting {
+				border-color: $hunting;
+			}
+			&.mining {
+				border-color: $mining;
+			}
+			&.woodcutting {
+				border-color: $woodcutting;
+			}
+			&.cooking {
+				border-color: $cooking;
+			}
+			&.crafting {
+				border-color: $crafting;
+			}
+			&.fletching {
+				border-color: $fletching;
+			}
+			&.herbalism {
+				border-color: $herbalism;
+			}
+			&.tanning {
+				border-color: $tanning;
+			}
+		}
+
+	}
 }

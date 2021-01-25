@@ -3,10 +3,10 @@ import React from 'react';
 import FutureContent from '../FutureContent/FutureContent'
 
 
-export default function CombatMain () {
+export default function Artisan () {
 	return (
 		<section>
-			<FutureContent version={"Beta v1.0.0"}/>
+			<FutureContent />
 			{/* <Link to="/combat/battles">battles</Link>
 			<Link to="/combat/slayer">slayer</Link>
 			<Link to="/combat/expeditions">expeditions</Link> */}

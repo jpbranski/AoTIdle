@@ -38,10 +38,15 @@ export default class App extends React.Component {
 		}, 1000);
 	}
 
+
+
+	// takes the current active task and runs it
 	runActiveTasks = () => {
 		let taskInterval;
 		let chance;
+		let deplete;
 
+		// checks which category of skill is being trained
 		function loop() {
 			let currentTask = playerInfo.activeTask;
 				if(playerInfo.activeCategory === "fishing"){
@@ -51,27 +56,30 @@ export default class App extends React.Component {
 				} else if(playerInfo.activeCategory === "woodcutting") {
 					currentTask = playerInfo.activeTask + " log";
 				} else if(playerInfo.activeCategory === "hunting"){
+					//compares hunter tasks to resources given
 					currentTask = huntingResources(playerInfo.activeTask);
 				}
+
 			taskInterval = playerInfo.attemptRate === 0 ? 5000 : playerInfo.attemptRate;
 			chance = playerInfo.successRate / 100;
-			let deplete = playerInfo.depleteChance / 100;
+			deplete = playerInfo.depleteChance / 100;
 			
+			// determines if the player successfully completed the task
 			if(Math.random() < chance) {
 				playerSkills[playerInfo.activeCategory].experience += playerInfo.expRate;
 				playerStorage[currentTask]++;
-				
 			} else {
+
+				// if the player fails the task, delay attempt by 2x the attempt rate duration
 				if(Math.random() < deplete) {
 					let respawn = playerInfo.attemptRate * 2;
 					
 					setTimeout(console.log("Resource has respawned"), respawn)
 				}
 			}
-
 			setTimeout(loop, taskInterval);
-		  }
-		  loop();
+		}
+		loop();
 	}
 
 	render () {
