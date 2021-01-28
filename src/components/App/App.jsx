@@ -14,6 +14,7 @@ import calcTotalLevel from '../../util/calcTotalLevel';
 import huntingResources from '../../util/huntingResources';
 // import calcSkillLevel from '../../util/calcSkillLevel';
 
+// use bcrypt for password hashing
 
 export default class App extends React.Component {
 	
@@ -40,6 +41,35 @@ export default class App extends React.Component {
 	}
 
 
+	createNewPlayer = (e) => {
+		console.log(e);
+		fetch(`https://localhost:8080/`, {
+			method: 'POST',
+			headers: {
+				Accept: `application/json`,
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				
+			})
+		})
+		.then()
+		.catch()
+	}
+
+	userLogIn = (e) => {
+		console.log("logged in");
+		this.setState({
+			logStatus: true,
+		})
+	}
+
+	userLogOut = (e) => {
+		console.log("logged out");
+		this.setState({
+			logStatus: false,
+		})
+	}
 
 	// takes the current active task and runs it
 	runActiveTasks = () => {
@@ -87,7 +117,13 @@ export default class App extends React.Component {
 		return (
 			<div className="App">
 				<MainNav />
-				<MainContent updateTask={this.updateTask} logStatus={this.state.logStatus} />
+				<MainContent 
+					updateTask={this.updateTask} 
+					logStatus={this.state.logStatus} 
+					newPlayer={this.createNewPlayer}
+					userLogIn={this.userLogIn}
+					userLogOut={this.userLogOut}	
+				/>
 				
 			</div>
 		)	

@@ -26,13 +26,15 @@ import KingdomStorage from '../Kingdom/KingdomStorage';
 import './MainContent.min.css';
 
 export default function MainContent(props) {
+	// console.log(props);
+
 	let logStatus = props.logStatus;
 	return (
 		<main className="MainContent">
 			<ContentHeader />
 			<Switch>
 				<Route exact path="/" render={
-					(props) => <MainScreen logStatus={logStatus}/>
+					(props) => <MainScreen newPlayer={props.newPlayer} logStatus={logStatus} userLogIn={props.userLogIn} userLogOut={props.userLogOut}/>
 				} />
 
 				<Route exact path="/player" component={Player} />
