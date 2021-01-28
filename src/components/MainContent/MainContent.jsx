@@ -25,21 +25,25 @@ import KingdomStorage from '../Kingdom/KingdomStorage';
 
 import './MainContent.min.css';
 
-export default function MainContent(props) {
+export default class MainContent extends React.Component {
 	// console.log(props);
-
-	let logStatus = props.logStatus;
+render () {
+	let logStatus = this.props.logStatus;
 	return (
 		<main className="MainContent">
 			<ContentHeader />
 			<Switch>
 				<Route exact path="/" render={
-					(props) => <MainScreen newPlayer={props.newPlayer} logStatus={logStatus} userLogIn={props.userLogIn} userLogOut={props.userLogOut}/>
+					() => <MainScreen 
+								newPlayer={this.props.newPlayer}
+								logStatus={logStatus} 
+								userLogIn={this.props.userLogIn} 
+								userLogOut={this.props.userLogOut}/>
 				} />
 
 				<Route exact path="/player" component={Player} />
 
-				<Route exact path="/combat" render={(props) => <CombatMain />} />
+				<Route exact path="/combat" render={() => <CombatMain />} />
 				<Route exact path="/combat/battles" component={Battles} />
 				<Route exact path="/combat/slayer" component={Slayer} />
 				<Route exact path="/combat/expeditions" component={Expeditions} />
@@ -58,4 +62,5 @@ export default function MainContent(props) {
 			</Switch>
 		</main>
 	)
+}
 }

@@ -14,12 +14,12 @@ export default function Fishing (props) {
 				FishingData.map( fish => {
 
 					return (
-						<label key={`fishList${fish.name}`} className="fishing task" onClick={() => updateTask(fish.name, fish.skill)}>
+						<label key={`fishList${fish.name}`} className="fishing task">
 							<p className="taskCategory">Fish<br />
 								<span className="taskName">{fish.name}</span>
 							</p>
 							<img src="#" alt="fish" />
-							<input type="radio" name="currentTask"/>
+							<input type="radio" name="currentTask" onClick={() => updateTask(fish.name, fish.skill)}/>
 							<p className="taskInfo">
 								{fish.experience}xp | lvl {fish.minLevel}
 							</p>

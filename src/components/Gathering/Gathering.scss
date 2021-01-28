@@ -112,6 +112,10 @@
 
 			cursor: pointer;
 
+			&.checked {
+				box-shadow: 5px 5px 10px $gold;
+			}
+
 			.taskCategory {
 				text-align: center;
 				font-size: 14px;
@@ -123,8 +127,6 @@
 					line-height: .9;
 					letter-spacing: 1px;
 				}
-
-				
 			}
 
 			img {
@@ -134,7 +136,7 @@
 				text-align: center;
 				margin: 5px auto;
 			}
-			
+						
 			.taskInfo, .ownedResource {
 				margin-top: auto;
 				margin-bottom: 0;
@@ -142,10 +144,6 @@
 
 			.ownedResource {
 				font-style: italic;
-			}
-
-			input[type="radio"] {
-				
 			}
 
 			&.fishing {
