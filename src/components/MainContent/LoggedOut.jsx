@@ -1,19 +1,20 @@
 import React from 'react';
 
-export default function LoggedOut () {
+export default function LoggedOut (props) {
+	// console.log(props);
 	return (
 		<section className="LoggedOut">
 			<form action="">
-				<label htmlFor="">
+				<label htmlFor="userName">
 					Username: <br />
-					<input type="text" name="userName"/>
+					<input type="text" id="userName" name="userName"/>
 				</label>
-				<label htmlFor="">
+				<label htmlFor="pwkey">
 					Password: <br />
-					<input type="password" name="" id=""/>
+					<input type="password" id="pwkey" name="pwkey" />
 				</label>
-				<button className="loginbtn">Log in</button> 
-				<button className="createbtn">Create Account</button>
+				<button className="loginbtn" >Log in</button> 
+				<button className="createbtn" onClick={(e) => props.newPlayer(e)}>Create Account</button>
 			</form>
 		</section>
 	)

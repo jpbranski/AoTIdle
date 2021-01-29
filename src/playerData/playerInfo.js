@@ -1,5 +1,5 @@
 const playerInfo = {
-	name: 'With Faith',
+	name: 'Please sign in!',
 	currentHealth: 100,
 	gold: 95203,
 

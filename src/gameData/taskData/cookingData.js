@@ -11,7 +11,7 @@ const cookingData = [
 		]
 	},
 	{
-		name: 'bluefill',
+		name: 'bluegill',
 		skill: 'cooking',
 		minLevel: 1,
 		experience: 9,
@@ -22,7 +22,7 @@ const cookingData = [
 		]
 	},
 	{
-		name: 'crappieh',
+		name: 'crappie',
 		skill: 'cooking',
 		minLevel: 1,
 		experience: 9,

@@ -17,7 +17,7 @@ import randomChance from '../../util/randomChance';
 export default class App extends React.Component {
 	
 	state = {
-		logStatus : true,
+		logStatus : false,
 		lastSave : "",
 
 		activeTask: "",
@@ -45,19 +45,29 @@ export default class App extends React.Component {
 
 
 	createNewPlayer = (e) => {
-		console.log(e);
-		fetch(`https://localhost:8080/`, {
+		e.preventDefault();
+		playerInfo.name = document.getElementsByName("userName")[0].value;
+		fetch(`http://localhost:8080/`, {
 			method: 'POST',
-			headers: {
-				Accept: `application/json`,
+			header: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				
+				username : document.getElementsByName("userName")[0].value,
+				password : document.getElementsByName("pwkey")[0].value,
 			})
 		})
-		.then()
-		.catch()
+		.then(response => response.json())
+		.then(data => {
+			console.log("success", data)
+			this.setState({
+				logStatus : true,
+			})
+
+		})
+		.catch((err) => {
+			console.log("Error", err)
+		});
 	}
 
 	userLogIn = (e) => {
