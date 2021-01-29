@@ -11,26 +11,26 @@ export default function Woodcutting (props) {
 		<section className="Woodcutting Gathering">
 			<section className="taskList">
 				{
-				woodcuttingData.map( tree => {
+					woodcuttingData.map( tree => {
 
-					return (
-						<label key={`treeList${tree.name}`} className="woodcutting task" onClick={() => updateTask(tree.name, tree.skill)}>
-							<p className="taskCategory">Cut<br />
-								<span className="taskName">{tree.name}</span>
-							</p>
-							<img src="#" alt="fish" />
-							<input type="radio" name="currentTask"/>
-							<p className="taskInfo">
-								{tree.experience}xp | lvl {tree.minLevel}
-							</p>
-							<p className="ownedResource">
-								owned: {playerStorage[tree.name + " log"]}
+						return (
+							<label key={`treeList${tree.name}`} className="woodcutting task">
+								<p className="taskCategory">Cut<br />
+									<span className="taskName">{tree.name}</span>
+								</p>
+								<img src="#" alt="fish" />
+								<input type="radio" name="currentTask" onClick={() => updateTask(tree.name, tree.skill)}/>
+								<p className="taskInfo">
+									{tree.experience}xp | lvl {tree.minLevel}
+								</p>
+								<p className="ownedResource">
+									owned: {playerStorage[tree.name + " log"]}
+									
+								</p>
 								
-							</p>
-							
-						</label>
-					)
-				})}
+							</label>
+					)})
+				}
 			</section>
 		</section>
 	)

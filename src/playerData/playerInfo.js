@@ -9,6 +9,7 @@ const playerInfo = {
 	attemptRate: 0,
 	successRate: 0,
 	depleteChance: 0,
+	requires : [],
 }
 
 export default playerInfo;

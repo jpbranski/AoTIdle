@@ -18,7 +18,7 @@ export default function Fishing (props) {
 							<p className="taskCategory">Fish<br />
 								<span className="taskName">{fish.name}</span>
 							</p>
-							<img src="#" alt="fish" />
+							<img src="/img/fish.png" alt="fish" />
 							<input type="radio" name="currentTask" onClick={() => updateTask(fish.name, fish.skill)}/>
 							<p className="taskInfo">
 								{fish.experience}xp | lvl {fish.minLevel}

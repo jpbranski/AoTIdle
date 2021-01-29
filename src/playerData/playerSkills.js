@@ -41,9 +41,13 @@ const playerSkills = {
 	herbalism: {
 		experience: 0,
 	},
+	smithing: {
+		experience: 0,
+	},
 	tanning: {
 		experience: 0,
 	},
+	
 }
 
 export default playerSkills;

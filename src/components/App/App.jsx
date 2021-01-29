@@ -8,25 +8,30 @@ import './App.min.css';
 import playerStorage from '../../playerData/playerStorage';
 import playerInfo from '../../playerData/playerInfo';
 import playerSkills from '../../playerData/playerSkills';
+import skillCategories from '../../gameData/skillCategories';
 
 import updateTask from '../../util/updateTask';
-import calcTotalLevel from '../../util/calcTotalLevel';
 import huntingResources from '../../util/huntingResources';
-// import calcSkillLevel from '../../util/calcSkillLevel';
+import randomChance from '../../util/randomChance';
 
-// use bcrypt for password hashing
 
 export default class App extends React.Component {
 	
 	state = {
 		logStatus : true,
 		lastSave : "",
+
 		activeTask: "",
 		activeCategory: "",
+		taskInterval: 5000,
+		taskChance: 0,
+		depleteChance: 0,
+		respawnRate: 0,
+
+		ranNum: 0,
 	}
 
 	componentDidMount = () => {
-		calcTotalLevel();
 		updateTask();
 		this.runActiveTasks();
 		this.startSaves();
@@ -72,45 +77,101 @@ export default class App extends React.Component {
 	}
 
 	// takes the current active task and runs it
-	runActiveTasks = () => {
-		let taskInterval;
-		let chance;
-		let deplete;
-
-		// checks which category of skill is being trained
-		function loop() {
-			let currentTask = playerInfo.activeTask;
-				if(playerInfo.activeCategory === "fishing"){
-					currentTask = "raw " + playerInfo.activeTask;
-				} else if(playerInfo.activeCategory === "mining") {
-					currentTask = playerInfo.activeTask + " ore";
-				} else if(playerInfo.activeCategory === "woodcutting") {
-					currentTask = playerInfo.activeTask + " log";
-				} else if(playerInfo.activeCategory === "hunting"){
-					//compares hunter tasks to resources given
-					currentTask = huntingResources(playerInfo.activeTask);
-				}
-
-			taskInterval = playerInfo.attemptRate === 0 ? 5000 : playerInfo.attemptRate;
-			chance = playerInfo.successRate / 100;
-			deplete = playerInfo.depleteChance / 100;
-			
-			// determines if the player successfully completed the task
-			if(Math.random() < chance) {
-				playerSkills[playerInfo.activeCategory].experience += playerInfo.expRate;
-				playerStorage[currentTask]++;
-			} else {
-
-				// if the player fails the task, delay attempt by 2x the attempt rate duration
-				if(Math.random() < deplete) {
-					let respawn = playerInfo.attemptRate * 2;
-					
-					setTimeout(console.log("Resource has respawned"), respawn)
-				}
+	runActiveTasks = () => {	
+		const loop = () => {
+			this.checkTaskUpdates();
+			let skillGroup = this.getTaskGroup();
+			if( skillGroup === false ) {
+				setTimeout(this.runActiveTasks, 5000)
+			} else if ( skillGroup === "gathering" ) {
+				this.runGatheringSkill();
+			} else if ( skillGroup === "artisan" ) {
+				this.runArtisanSkill();
 			}
-			setTimeout(loop, taskInterval);
+			setTimeout(loop, this.state.taskInterval)
 		}
+		
 		loop();
+	}
+
+	checkTaskUpdates() {
+		// console.log("check task updates")
+		if( this.state.activeTask !== playerInfo.activeTask ) {
+			this.setState({
+				activeCategory : playerInfo.activeCategory,
+				activeTask : playerInfo.activeTask,
+				taskInterval : playerInfo.attemptRate,
+				taskChance : playerInfo.successRate / 100,
+				depleteChance : playerInfo.depleteChance / 100,
+				respawnRate : playerInfo.depleteChance / 100 * 2,
+			});	
+		} else { return; }
+	}
+
+	getTaskGroup() {
+		// console.log("get task group")
+		if(skillCategories.gatheringSkills.indexOf(playerInfo.activeCategory) >= 0) {
+			return "gathering";
+		} else if(skillCategories.artisanSkills.indexOf(playerInfo.activeCategory) >= 0) {
+			return "artisan";
+		} else {
+			return false
+		}
+	}
+
+	runGatheringSkill = () => {
+		// console.log(" run skill ")
+		let resource;
+		switch (this.state.activeCategory) {
+			case "fishing":
+				resource = `raw ${this.state.activeTask}`;
+				break;
+			case "mining":
+				resource = `${this.state.activeTask} ore`;
+				break;
+			case "woodcutting":
+				resource = `${this.state.activeTask} log`;
+				break;
+			case "hunting":
+				resource = huntingResources(this.state.activeTask);
+				break;
+			default:
+				break;
+		}
+
+		if(randomChance(this.state.taskChance)){
+			playerSkills[this.state.activeCategory].experience += playerInfo.expRate;
+			playerStorage[resource]++;
+
+			this.setState({
+				ranNum : Math.random()
+			})
+		} else {
+			if(randomChance(this.state.depleteChance)) {
+				setTimeout(function(){},this.state.respawnRate);
+			}
+		}
+	}
+
+	runArtisanSkill() {
+		let enoughResources = false;
+		for(let i = 0; i < playerInfo.requires.length; i++){
+			if(playerInfo.requires[i][1] > playerStorage[playerInfo.requires[i][0]]) {
+				enoughResources = false;
+				break;
+			} else {
+				enoughResources = true;
+			}
+		}
+
+		if(enoughResources){
+			for(let i = 0; i < playerInfo.requires.length; i++){
+				playerStorage[playerInfo.requires[i][0]]-= playerInfo.requires[i][1];
+			}
+			playerSkills[playerInfo.activeCategory].experience += playerInfo.expRate;
+			playerStorage[playerInfo.activeTask]++;
+		}
+		
 	}
 
 	render () {

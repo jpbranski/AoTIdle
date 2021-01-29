@@ -19,6 +19,7 @@ import Mining from '../Gathering/Mining';
 import Woodcutting from '../Gathering/Woodcutting';
 
 import Artisan from '../Artisan/Artisan';
+import Cooking from '../Artisan/Cooking';
 
 import Kingdom from '../Kingdom/Kingdom';
 import KingdomStorage from '../Kingdom/KingdomStorage';
@@ -56,6 +57,7 @@ render () {
 				<Route exact path="/gathering/woodcutting" component={Woodcutting}/>
 
 				<Route exact path="/artisan" component={Artisan}/>
+				<Route exact path="/artisan/cooking" component={Cooking}/>
 
 				<Route exact path="/kingdom" component={Kingdom}/>
 				<Route exact path="/kingdom/storage" component={KingdomStorage}/>

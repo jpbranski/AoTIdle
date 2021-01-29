@@ -3,7 +3,9 @@ import fishingData from '../gameData/taskData/fishingData';
 import miningData from '../gameData/taskData/miningData';
 import woodcuttingData from '../gameData/taskData/woodcuttingData';
 import huntingData from '../gameData/taskData/huntingData';
+import cookingData from '../gameData/taskData/cookingData';
 import calcSkillLevel from '../util/calcSkillLevel';
+import skillCategories from '../gameData/skillCategories';
 
 const updateTask = function(task, category) {
 	let newTask = [];
@@ -25,6 +27,10 @@ const updateTask = function(task, category) {
 			newTask = huntingData.find( ({ name }) => name === task);
 			skillLevel = calcSkillLevel(category);
 			break;
+		case 'cooking':
+			newTask = cookingData.find( ({ name }) => name === task);
+			skillLevel = calcSkillLevel(category);
+			break;
 		default:
 			console.log("please select a task!");
 	}
@@ -32,7 +38,19 @@ const updateTask = function(task, category) {
 	if( skillLevel < newTask.minLevel ) {
 		console.log("You do not have the required level for this task");
 		return;
-	} else {
+	} else if (skillCategories.artisanSkills.indexOf(category) >= 0) {
+		Object.assign(playerInfo, {
+			activeTask : newTask.name,
+			activeCategory : newTask.skill,
+			expRate : newTask.experience,
+			attemptRate : newTask.attemptRate,
+			successRate : newTask.successRate,
+			depleteChance : 100,
+			requires : newTask.requires,
+		})
+	}
+	
+	else {
 		Object.assign(playerInfo, {
 			activeTask : newTask.name,
 			activeCategory : newTask.skill,
@@ -40,6 +58,7 @@ const updateTask = function(task, category) {
 			attemptRate : newTask.attemptRate,
 			successRate : newTask.successRate,
 			depleteChance : newTask.depleteChance,
+			requires : [],
 		})
 	}
 }
