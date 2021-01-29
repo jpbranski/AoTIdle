@@ -1,6 +1,6 @@
 @import '../../util/variables';
 
-.Gathering {
+.Artisan {
 	min-height: 100vh;
 
 	.skillMenu {
@@ -9,6 +9,7 @@
 		flex-wrap: nowrap;
 		justify-content: center;
 		align-items: center;
+		padding-bottom: 3em;
 
 		a {
 			display: flex;
@@ -36,45 +37,55 @@
 
 			transition: all 1s ease;
 
-			&.farming{
-				border-color: $farming;
+			&.cooking{
+				border-color: $cooking;
 
 				&:hover {
-					background-color: rgba($farming, 0.8);
+					background-color: rgba($cooking, 0.8);
 				}
 			}
 
-			&.fishing{
-				border-color: $fishing;
+			&.crafting{
+				border-color: $crafting;
 
 				&:hover {
-					background-color: rgba($fishing, 0.8);
+					background-color: rgba($crafting, 0.8);
 				}
 			}
 			
-			&.hunting{
-				border-color: $hunting;
+			&.fletching{
+				border-color: $fletching;
 
 				&:hover {
-					background-color: rgba($hunting, 0.8);
+					background-color: rgba($fletching, 0.8);
 				}
 			}
 
-			&.mining{
-				border-color: $mining;
+			&.herbalism{
+				border-color: $herbalism;
 
 				&:hover {
-					background-color: rgba($mining, 0.8);
+					background-color: rgba($herbalism, 0.8);
 				}
 			}
 
-			&.woodcutting{
-				border-color: $woodcutting;
+			&.tanning{
+				border-color: $tanning;
 
 				&:hover {
-					background-color: rgba($woodcutting, 0.8);
+					background-color: rgba($tanning, 0.8);
 				}
 			}
+			
+			&.smithing{
+				border-color: $smithing;
+
+				&:hover {
+					background-color: rgba($smithing, 0.8);
+				}
+			}
+
+		
 
 			span {
 				font-size: 12px;
@@ -146,20 +157,28 @@
 				font-style: italic;
 			}
 
-			&.fishing {
-				border-color: $fishing;
+			&.cooking {
+				border-color: $cooking;
 			}
 
-			&.mining {
-				border-color: $mining;
+			&.crafting {
+				border-color: $crafting;
 			}
 
-			&.woodcutting {
-				border-color: $woodcutting;
+			&.fletching {
+				border-color: $fletching;
 			}
 
-			&.hunting {
-				border-color: $hunting;
+			&.herbalism {
+				border-color: $herbalism;
+			}
+
+			&.tanning {
+				border-color: $tanning;
+			}
+
+			&.smithing {
+				border-color: $smithing;
 			}
 		}
 	}

@@ -14,12 +14,12 @@ export default function Hunting (props) {
 				huntingData.map( creature => {
 					let resource = huntingResources(creature.name);
 					return (
-						<label key={`creatureList${creature.name}`} className="hunting task" onClick={() => updateTask(creature.name, creature.skill)}>
+						<label key={`creatureList${creature.name}`} className="hunting task" >
 							<p className="taskCategory">Hunt<br />
 								<span className="taskName">{creature.name}</span>
 							</p>
 							<img src="#" alt="fish" />
-							<input type="radio" name="currentTask"/>
+							<input type="radio" name="currentTask" onClick={() => updateTask(creature.name, creature.skill)}/>
 							<p className="taskInfo">
 								{creature.experience}xp | lvl {creature.minLevel}
 							</p>
