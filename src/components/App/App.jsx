@@ -10,7 +10,6 @@ import playerInfo from '../../playerData/playerInfo';
 import playerSkills from '../../playerData/playerSkills';
 import skillCategories from '../../gameData/skillCategories';
 
-import updateTask from '../../util/updateTask';
 import huntingResources from '../../util/huntingResources';
 import randomChance from '../../util/randomChance';
 
@@ -32,7 +31,6 @@ export default class App extends React.Component {
 	}
 
 	componentDidMount = () => {
-		updateTask();
 		this.runActiveTasks();
 		this.startSaves();
 	}
@@ -82,7 +80,7 @@ export default class App extends React.Component {
 			this.checkTaskUpdates();
 			let skillGroup = this.getTaskGroup();
 			if( skillGroup === false ) {
-				setTimeout(this.runActiveTasks, 5000)
+				setTimeout(loop, 5000)
 			} else if ( skillGroup === "gathering" ) {
 				this.runGatheringSkill();
 			} else if ( skillGroup === "artisan" ) {

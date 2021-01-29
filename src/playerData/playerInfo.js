@@ -6,7 +6,7 @@ const playerInfo = {
 	activeTask: "",
 	activeCategory: "",
 	expRate: 0,
-	attemptRate: 0,
+	attemptRate: 5000,
 	successRate: 0,
 	depleteChance: 0,
 	requires : [],
