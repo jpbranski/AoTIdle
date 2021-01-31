@@ -18,7 +18,7 @@ export default function Woodcutting (props) {
 								<p className="taskCategory">Cut<br />
 									<span className="taskName">{tree.name}</span>
 								</p>
-								<img src="#" alt="fish" />
+								<img src="#" alt="tree" />
 								<input type="radio" name="currentTask" onClick={() => updateTask(tree.name, tree.skill)}/>
 								<p className="taskInfo">
 									{tree.experience}xp | lvl {tree.minLevel}

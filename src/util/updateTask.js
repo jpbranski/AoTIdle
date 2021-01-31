@@ -4,6 +4,8 @@ import miningData from '../gameData/taskData/miningData';
 import woodcuttingData from '../gameData/taskData/woodcuttingData';
 import huntingData from '../gameData/taskData/huntingData';
 import cookingData from '../gameData/taskData/cookingData';
+import fletchingData from '../gameData/taskData/fletchingData';
+import smithingData from '../gameData/taskData/smithingData';
 import calcSkillLevel from '../util/calcSkillLevel';
 import skillCategories from '../gameData/skillCategories';
 
@@ -29,6 +31,14 @@ const updateTask = function(task, category) {
 			break;
 		case 'cooking':
 			newTask = cookingData.find( ({ name }) => name === task);
+			skillLevel = calcSkillLevel(category);
+			break;
+		case 'fletching':
+			newTask = fletchingData.find( ({ name }) => name === task);
+			skillLevel = calcSkillLevel(category);
+			break;
+		case 'smithing':
+			newTask = smithingData.find( ({ name }) => name === task);
 			skillLevel = calcSkillLevel(category);
 			break;
 		default:

@@ -3,9 +3,9 @@ const cookingData = [
 		name: 'crawfish',
 		skill: 'cooking',
 		minLevel: 1,
-		experience: 9,
+		experience: 7,
 		attemptRate: 2300,
-		successRate: 55,
+		successRate: 80,
 		requires: [
 			['raw crawfish', 1],
 		]
@@ -13,10 +13,10 @@ const cookingData = [
 	{
 		name: 'bluegill',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
+		minLevel: 5,
+		experience: 20,
 		attemptRate: 2300,
-		successRate: 55,
+		successRate: 80,
 		requires: [
 			['raw bluegill', 1],
 		]
@@ -24,10 +24,10 @@ const cookingData = [
 	{
 		name: 'crappie',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
+		minLevel: 10,
+		experience: 40,
 		attemptRate: 2300,
-		successRate: 55,
+		successRate: 80,
 		requires: [
 			['raw crappie', 1],
 		]
@@ -35,10 +35,10 @@ const cookingData = [
 	{
 		name: 'lava shrimp',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
+		minLevel: 25,
+		experience: 99,
 		attemptRate: 2300,
-		successRate: 55,
+		successRate: 75,
 		requires: [
 			['raw lava shrimp', 1],
 		]
@@ -46,10 +46,10 @@ const cookingData = [
 	{
 		name: 'cod',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
-		attemptRate: 2300,
-		successRate: 55,
+		minLevel: 25,
+		experience: 125,
+		attemptRate: 2700,
+		successRate: 80,
 		requires: [
 			['raw cod', 1],
 		]
@@ -57,10 +57,10 @@ const cookingData = [
 	{
 		name: 'salmon',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
-		attemptRate: 2300,
-		successRate: 55,
+		minLevel: 30,
+		experience: 163,
+		attemptRate: 2700,
+		successRate: 80,
 		requires: [
 			['raw salmon', 1],
 		]
@@ -68,10 +68,10 @@ const cookingData = [
 	{
 		name: 'white ray',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
-		attemptRate: 2300,
-		successRate: 55,
+		minLevel: 40,
+		experience: 235,
+		attemptRate: 2700,
+		successRate: 75,
 		requires: [
 			['raw white ray', 1],
 		]
@@ -79,10 +79,10 @@ const cookingData = [
 	{
 		name: 'lobster',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
-		attemptRate: 2300,
-		successRate: 55,
+		minLevel: 45,
+		experience: 333,
+		attemptRate: 2700,
+		successRate: 80,
 		requires: [
 			['raw lobster', 1],
 		]
@@ -90,10 +90,10 @@ const cookingData = [
 	{
 		name: 'shadowfin',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
-		attemptRate: 2300,
-		successRate: 55,
+		minLevel: 55,
+		experience: 650,
+		attemptRate: 3100,
+		successRate: 70,
 		requires: [
 			['raw shadowfin', 1],
 		]
@@ -101,10 +101,10 @@ const cookingData = [
 	{
 		name: 'swordfish',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
-		attemptRate: 2300,
-		successRate: 55,
+		minLevel: 60,
+		experience: 999,
+		attemptRate: 3100,
+		successRate: 70,
 		requires: [
 			['raw swordfish', 1],
 		]
@@ -112,10 +112,10 @@ const cookingData = [
 	{
 		name: 'goliath tigerfish',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
-		attemptRate: 2300,
-		successRate: 55,
+		minLevel: 75,
+		experience: 1337,
+		attemptRate: 3100,
+		successRate: 70,
 		requires: [
 			['raw goliath tigerfish', 1],
 		]
@@ -123,10 +123,10 @@ const cookingData = [
 	{
 		name: 'magma grouper',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
-		attemptRate: 2300,
-		successRate: 55,
+		minLevel: 80,
+		experience: 1996,
+		attemptRate: 3300,
+		successRate: 60,
 		requires: [
 			['raw magma grouper', 1],
 		]
@@ -134,10 +134,10 @@ const cookingData = [
 	{
 		name: 'glacial monkfish',
 		skill: 'cooking',
-		minLevel: 1,
-		experience: 9,
-		attemptRate: 2300,
-		successRate: 55,
+		minLevel: 85,
+		experience: 2250,
+		attemptRate: 3300,
+		successRate: 65,
 		requires: [
 			['raw glacial monkfish', 1],
 		]

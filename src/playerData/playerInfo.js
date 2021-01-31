@@ -1,7 +1,7 @@
 const playerInfo = {
-	name: 'Please sign in!',
+	name: 'Unknown User',
 	currentHealth: 100,
-	gold: 95203,
+	gold: 0,
 
 	activeTask: "",
 	activeCategory: "",

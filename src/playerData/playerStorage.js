@@ -86,6 +86,57 @@ const playerStorage = {
 	'dragonhide': 0,
 	'galactic pelt': 0,
 	'solar talon': 0,
+
+
+
+	// flethcing resources
+	'bow string' : 0,
+
+	// unstrung bows
+	'fir bow limbs' : 0,
+	'pine bow limbs' : 0,
+	'oak bow limbs' : 0,
+	'maple bow limbs' : 0,
+	'cherry bow limbs' : 0,
+	'ironwood bow limbs' : 0,
+	'glimmering bow limbs' : 0,
+
+	// completed bows
+	'fir bow' : 0,
+	'pine bow' : 0,
+	'oak bow' : 0,
+	'maple bow' : 0,
+	'cherry bow' : 0,
+	'ironwood bow' : 0,
+	'glimmering bow' : 0,
+
+	// crossbow stocks
+	'fir c\'bow stock' : 0,
+	'pine c\'bow stock' : 0,
+	'oak c\'bow stock' : 0,
+	'maple c\'bow stock' : 0,
+	'cherry c\'bow stock' : 0,
+	'ironwood c\'bow stock' : 0,
+	'glimmering c\'bow stock' : 0,
+
+	// crossbow limbs
+	'bronze c\'bow limbs' : 0,
+	'iron c\'bow limbs' : 0,
+	'steel c\'bow limbs' : 0,
+	'enchanted c\'bow limbs' : 0,
+	'adamant c\'bow limbs' : 0,
+	'blessed c\'bow limbs' : 0,
+	'dragon c\'bow limbs' : 0,
+	'magma c\'bow limbs' : 0,
+
+	// completed crossbows
+	'fir crossbow' : 0,
+	'pine crossbow' : 0,
+	'oak crossbow' : 0,
+	'maple crossbow' : 0,
+	'cherry crossbow' : 0,
+	'ironwood crossbow' : 0,
+	'glimmering crossbow' : 0,
 }
 
 export default playerStorage;

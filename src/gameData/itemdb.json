@@ -1,0 +1,17 @@
+{
+	"1001": {
+		"name" : "raw crawfish",
+		"category" : "cooking",
+		"description" : "I can try and cook this with level 1 cooking.",
+		"stackable" : "true",
+		"value" : "0"
+	},
+
+	"2001": {
+		"name" : "crawfish",
+		"category" : "food",
+		"description" : "This can heal me for 10 health!",
+		"stackable" : "true",
+		"value" : "1"
+	}
+}

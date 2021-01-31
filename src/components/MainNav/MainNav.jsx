@@ -7,7 +7,7 @@ import './MainNav.min.css';
 
 export default class MainNav extends React.Component {
 	state = {
-		isNavOpen : true,
+		isNavOpen : false,
 	}
 
 	toggleNav = () => {

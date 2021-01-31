@@ -17,7 +17,7 @@ import randomChance from '../../util/randomChance';
 export default class App extends React.Component {
 	
 	state = {
-		logStatus : false,
+		logStatus : true,
 		lastSave : "",
 
 		activeTask: "",
@@ -47,8 +47,9 @@ export default class App extends React.Component {
 	createNewPlayer = (e) => {
 		e.preventDefault();
 		playerInfo.name = document.getElementsByName("userName")[0].value;
-		fetch(`http://localhost:8080/`, {
+		fetch(`http://localhost:8080/users`, {
 			method: 'POST',
+			mode: 'cors',
 			header: {
 				'Content-Type': 'application/json',
 			},
@@ -66,7 +67,7 @@ export default class App extends React.Component {
 
 		})
 		.catch((err) => {
-			console.log("Error", err)
+			
 		});
 	}
 
@@ -86,11 +87,11 @@ export default class App extends React.Component {
 
 	// takes the current active task and runs it
 	runActiveTasks = () => {	
-		const loop = () => {
+		const loop = () => {		
 			this.checkTaskUpdates();
 			let skillGroup = this.getTaskGroup();
 			if( skillGroup === false ) {
-				setTimeout(loop, 5000)
+
 			} else if ( skillGroup === "gathering" ) {
 				this.runGatheringSkill();
 			} else if ( skillGroup === "artisan" ) {
@@ -103,7 +104,6 @@ export default class App extends React.Component {
 	}
 
 	checkTaskUpdates() {
-		// console.log("check task updates")
 		if( this.state.activeTask !== playerInfo.activeTask ) {
 			this.setState({
 				activeCategory : playerInfo.activeCategory,

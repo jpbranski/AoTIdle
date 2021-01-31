@@ -18,7 +18,7 @@ export default function Mining (props) {
 							<p className="taskCategory">Mine<br />
 								<span className="taskName">{rock.name}</span>
 							</p>
-							<img src="#" alt="fish" />
+							<img src="#" alt="rock" />
 							<input type="radio" name="currentTask" onClick={() => updateTask(rock.name, rock.skill)}/>
 							<p className="taskInfo">
 								{rock.experience}xp | lvl {rock.minLevel}

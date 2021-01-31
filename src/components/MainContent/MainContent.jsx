@@ -20,6 +20,11 @@ import Woodcutting from '../Gathering/Woodcutting';
 
 import Artisan from '../Artisan/Artisan';
 import Cooking from '../Artisan/Cooking';
+import Crafting from '../Artisan/Crafting';
+import Fletching from '../Artisan/Fletching';
+import Herbalism from '../Artisan/Herbalism';
+import Smithing from '../Artisan/Smithing';
+import Tanning from '../Artisan/Tanning';
 
 import Kingdom from '../Kingdom/Kingdom';
 import KingdomStorage from '../Kingdom/KingdomStorage';
@@ -58,6 +63,11 @@ render () {
 
 				<Route exact path="/artisan" component={Artisan}/>
 				<Route exact path="/artisan/cooking" component={Cooking}/>
+				<Route exact path="/artisan/crafting" component={Crafting}/>
+				<Route exact path="/artisan/fletching" component={Fletching}/>
+				<Route exact path="/artisan/herbalism" component={Herbalism}/>
+				<Route exact path="/artisan/smithing" component={Smithing}/>
+				<Route exact path="/artisan/tanning" component={Tanning}/>
 
 				<Route exact path="/kingdom" component={Kingdom}/>
 				<Route exact path="/kingdom/storage" component={KingdomStorage}/>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FutureContent from '../FutureContent/FutureContent'
 
 import skillCategories from '../../gameData/skillCategories.js';
 import calcSkillLevel from '../../util/calcSkillLevel';
@@ -10,7 +9,6 @@ import './Artisan.min.css';
 export default function Artisan () {
 	return (
 		<section className="Artisan">
-			<FutureContent />
 			<section className="skillMenu">
 				{
 					JSON.parse(JSON.stringify(skillCategories.artisanSkills)).map((skill) => {
