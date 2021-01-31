@@ -32,7 +32,7 @@ import KingdomStorage from '../Kingdom/KingdomStorage';
 import './MainContent.min.css';
 
 export default class MainContent extends React.Component {
-	// console.log(props);
+
 render () {
 	let logStatus = this.props.logStatus;
 	return (

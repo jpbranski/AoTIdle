@@ -1,5 +1,4 @@
 import React from 'react';
-import FutureContent from '../FutureContent/FutureContent'
 
 import fletchingData from '../../gameData/taskData/fletchingData';
 import playerStorage from '../../playerData/playerStorage'

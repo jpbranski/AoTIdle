@@ -4,7 +4,6 @@ import LoggedIn from './LoggedIn';
 import LoggedOut from './LoggedOut';
 
 export default function MainScreen (props) {
-	// console.log(props);
 	return (
 		<section className="MainScreen">
 			<h3>Welcome to Aegis of Terra, Traveler</h3>
