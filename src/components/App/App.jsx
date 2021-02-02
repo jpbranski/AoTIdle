@@ -1,4 +1,5 @@
 import React from 'react';
+// import { Route, withRouter } from 'react-router-dom';
 
 import MainNav from '../MainNav/MainNav';
 import MainContent from '../MainContent/MainContent';
@@ -17,7 +18,7 @@ import randomChance from '../../util/randomChance';
 export default class App extends React.Component {
 	
 	state = {
-		logStatus : true,
+		logStatus : false,
 		lastSave : "",
 
 		activeTask: "",
@@ -45,22 +46,27 @@ export default class App extends React.Component {
 
 
 	createNewPlayer = (e) => {
+		const username = document.getElementsByName("userName")[0].value;
+		const password = document.getElementsByName("pwkey")[0].value;
+		const playerData = playerSkills;
+		const playerItems = playerStorage;
 		e.preventDefault();
 		playerInfo.name = document.getElementsByName("userName")[0].value;
 		fetch(`http://localhost:8080/users`, {
 			method: 'POST',
 			mode: 'cors',
-			header: {
+			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				username : document.getElementsByName("userName")[0].value,
-				password : document.getElementsByName("pwkey")[0].value,
+				"username" : username,
+				"password" : password,
+				"playerData" : playerData,
+				"playerInve" : playerItems,
 			})
 		})
 		.then(response => response.json())
 		.then(data => {
-			console.log("success", data)
 			this.setState({
 				logStatus : true,
 			})
@@ -71,11 +77,65 @@ export default class App extends React.Component {
 		});
 	}
 
-	userLogIn = (e) => {
-		console.log("logged in");
-		this.setState({
-			logStatus: true,
+	userLogIn = ( e ) => {
+		e.preventDefault();
+		
+		const userLogin = {
+			username : document.getElementsByName("userName")[0].value,
+			password : document.getElementsByName("pwkey")[0].value,
+		};
+	
+		const options = {
+		  method : 'POST',
+		  headers : {
+			'Content-type' : 'application/json'
+		  },
+		  body : JSON.stringify( userLogin )
+		};
+	
+		fetch( "http://localhost:8080/login", options )
+		  .then( response => {
+			if( response.ok ){
+			  return response.json();
+			}
+	
+			throw new Error( response.statusText );
+		  })
+		  .then( responseJson => {
+			console.log(responseJson);
+			localStorage.setItem( 'token', responseJson.token );
+			this.setState({
+				logStatus : true,
+			})
+			playerInfo.name = userLogin.username;
+			// this.getUserData();
+		  })
+		  .catch( err => {
+			console.log( err.message );
+		  });
+		
+	  }
+
+	getUserData = () => {
+		const getOption = {
+			method : 'GET',
+			headers : {
+			  'Content-type' : 'application/json'
+			}
+		  };
+		fetch("https://localhost:8080/users", getOption)
+		.then(response => {
+			if( response.ok) {
+				console.log(response.json)
+				return response.json;
+			}
 		})
+		.then(
+			([user, storage]) => {
+				playerSkills = user;
+				playerStorage = storage;
+			}
+		)
 	}
 
 	userLogOut = (e) => {

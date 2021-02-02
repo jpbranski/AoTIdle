@@ -13,7 +13,7 @@ export default function LoggedOut (props) {
 					Password: <br />
 					<input type="password" id="pwkey" name="pwkey" />
 				</label>
-				<button className="loginbtn" >Log in</button> 
+				<button className="loginbtn" onClick={(e) => props.logIn(e)} >Log in</button> 
 				<button className="createbtn" onClick={(e) => props.newPlayer(e)}>Create Account</button>
 			</form>
 		</section>
