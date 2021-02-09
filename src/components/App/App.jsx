@@ -87,6 +87,7 @@ export default class App extends React.Component {
 	
 		const options = {
 		  method : 'POST',
+		  mode : 'cors',
 		  headers : {
 			'Content-type' : 'application/json'
 		  },
@@ -108,7 +109,7 @@ export default class App extends React.Component {
 				logStatus : true,
 			})
 			playerInfo.name = userLogin.username;
-			// this.getUserData();
+			this.getUserData();
 		  })
 		  .catch( err => {
 			console.log( err.message );
@@ -117,6 +118,7 @@ export default class App extends React.Component {
 	  }
 
 	getUserData = () => {
+		console.log("getUser");
 		const getOption = {
 			method : 'GET',
 			headers : {
@@ -125,9 +127,9 @@ export default class App extends React.Component {
 		  };
 		fetch("https://localhost:8080/users", getOption)
 		.then(response => {
-			if( response.ok) {
+			if( response.ok ) {
 				console.log(response.json)
-				return response.json;
+				return response.json();
 			}
 		})
 		.then(

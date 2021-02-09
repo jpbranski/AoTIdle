@@ -60,7 +60,11 @@
 	.NavList {
 		width: 95%;
 		margin: 0 auto;
-
+		
+		@media( min-width: 720px) {
+			margin: 0 auto;
+			width: 480px;
+		}
 		.playerName a {
 			margin: .375em 0;
 
@@ -71,7 +75,7 @@
 		}
 
 		ul {
-			list-style: none;
+			list-style: none;	
 
 			li {
 				width: 100%;
@@ -188,12 +192,6 @@
 			color: $gold;
 			border-color: $gold;
 			box-shadow: 0 0 10px rgba($gold, 0.9);
-		}
-	}
-
-	@media( min-width: 720px) {
-		.openNav, .closeNav {
-			display: none;
 		}
 	}
 }
