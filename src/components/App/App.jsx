@@ -52,7 +52,7 @@ export default class App extends React.Component {
 		const playerItems = playerStorage;
 		e.preventDefault();
 		playerInfo.name = document.getElementsByName("userName")[0].value;
-		fetch(`http://localhost:8080/users`, {
+		fetch(`postgres://ajkdrchudfvnxs:681050c6379791b18a2ef607bd94cf8577c69bb80e290e0c72b708aba12dd5b8@ec2-34-230-167-186.compute-1.amazonaws.com:5432/ddu3ktou2ums7u/users`, {
 			method: 'POST',
 			mode: 'cors',
 			headers: {
@@ -94,7 +94,7 @@ export default class App extends React.Component {
 		  body : JSON.stringify( userLogin )
 		};
 	
-		fetch( "http://localhost:8080/login", options )
+		fetch( "postgres://ajkdrchudfvnxs:681050c6379791b18a2ef607bd94cf8577c69bb80e290e0c72b708aba12dd5b8@ec2-34-230-167-186.compute-1.amazonaws.com:5432/ddu3ktou2ums7u/login", options )
 		  .then( response => {
 			if( response.ok ){
 			  return response.json();
@@ -125,7 +125,7 @@ export default class App extends React.Component {
 			  'Content-type' : 'application/json'
 			}
 		  };
-		fetch("https://localhost:8080/users", getOption)
+		fetch("postgres://ajkdrchudfvnxs:681050c6379791b18a2ef607bd94cf8577c69bb80e290e0c72b708aba12dd5b8@ec2-34-230-167-186.compute-1.amazonaws.com:5432/ddu3ktou2ums7u/users", getOption)
 		.then(response => {
 			if( response.ok ) {
 				console.log(response.json)
@@ -259,4 +259,4 @@ export default class App extends React.Component {
 			</div>
 		)	
 	}
-}
+} 
